@@ -1,0 +1,130 @@
+body {
+	background: #bcbcbc url('../images/irongrip.png') repeat;
+}
+a:hover {
+	color: #99cb00;
+}
+a.step.focus {
+	color: #99cb00;
+}
+.header-top .nav-right a:hover {
+	color: #99cb00;
+}
+.hl-text {
+	color: #99cb00;
+}
+
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover, 
+input[type="reset"]:hover {
+	background-color: #99cb00;
+}
+.button.dark:hover {
+	background-color: #99cb00;
+}
+
+.breadcrumbs .active {
+	color: #99cb00;
+}
+
+.fitRows article.post-entry .post-content {
+	background-color: #99cb00;
+}
+
+.masonry article.post-entry .post-content {
+	background-color: #99cb00;
+}
+
+.main-nav li:hover,
+.main-nav li.hover {
+	border-bottom: 3px solid #99cb00;
+}
+
+.flex-control-paging li a.flex-active {
+	background-color: #535f63;
+}
+.flex-control-paging li a:hover {
+	background-color: #99cb00;
+}
+
+.news-slide .slide-title {
+	color: #fff;
+}
+.news-slide .slide-content {
+	background-color: #99cb00; /* layer fill content + color overlay */
+}
+
+.items-similar .slide-content {
+	background-color: #99cb00;
+}
+
+table.cart td.product-subtotal {
+	color: #99cb00;
+}
+
+#main-menu ul.sf-menu {
+	background: transparent url('../images/nav-bar-green.png') repeat-x left top;
+}
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: #5b7782;
+}
+.sf-menu ul ul a:hover{
+	color: #99cb00 !important;
+}
+.sf-menu>li>ul {
+	background: #36535d;
+}
+.sf-menu>li.current, 
+.sf-menu>li.sfHover, 
+.sf-menu>li>a:hover {
+	background-color: #5b7782; /* layer fill content + color overlay */
+}
+.sf-menu li.sfHover .indicator,
+.sf-menu li.current .indicator,
+.sf-menu li:hover .indicator {
+	border-top-color: #5b7782;
+}
+
+.jcarousel-skin-default .jcarousel-next-horizontal:hover,
+.jcarousel-skin-default .jcarousel-next-horizontal:focus {
+    background-position: -32px -62px;
+}
+.jcarousel-skin-default .jcarousel-next-horizontal:active {
+     background-position: -32px -62px;
+}
+.jcarousel-skin-default .jcarousel-prev-horizontal:hover, 
+.jcarousel-skin-default .jcarousel-prev-horizontal:focus {
+    background-position: 0px -62px;
+}
+.jcarousel-skin-default .jcarousel-prev-horizontal:active {
+    background-position: 0px -62px;
+}
+
+.bt-basket {
+	background: url('../images/bt-add-basket-green.png') no-repeat 0 0 transparent;
+}
+
+.pagination .current {
+	background-color: #99cb00;
+}
+.pagination a.page-numbers:hover,
+.pagination .next:hover,
+.pagination .prev:hover {
+	background-color: #99cb00;
+}
+
+.speech-bubble {
+	background-color: #5b7782; /* layer fill content */
+}
+.speech-bubble:before {
+	border-left-color: #5b7782;
+}
+
+#comments .comment-meta a, #comments .comment-meta a:visited {
+	color: #5b7782; /* text color */
+}
+#comments .comment-meta a:hover {
+	color: #99cb00;
+}

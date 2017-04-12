@@ -1,0 +1,130 @@
+body {
+	background: #bcbcbc url('../images/tileable_wood_texture.png') repeat;
+}
+a:hover {
+	color: #ff3333;
+}
+a.step.focus {
+	color: #ff3333;
+}
+.header-top .nav-right a:hover {
+	color: #ff3333;
+}
+.hl-text {
+	color: #ff3333;
+}
+
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover, 
+input[type="reset"]:hover {
+	background-color: #ff3333;
+}
+.button.dark:hover {
+	background-color: #ff3333;
+}
+
+.breadcrumbs .active {
+	color: #ff3333;
+}
+
+.fitRows article.post-entry .post-content {
+	background-color: #ff3333;
+}
+
+.masonry article.post-entry .post-content {
+	background-color: #ff3333;
+}
+
+.main-nav li:hover,
+.main-nav li.hover {
+	border-bottom: 3px solid #ff3333;
+}
+
+.flex-control-paging li a.flex-active {
+	background-color: #554646;
+}
+.flex-control-paging li a:hover {
+	background-color: #ff3333;
+}
+
+.news-slide .slide-title {
+	color: #fff;
+}
+.news-slide .slide-content {
+	background-color: #ff3333; /* layer fill content + color overlay */
+}
+
+.items-similar .slide-content {
+	background-color: #ff3333;
+}
+
+table.cart td.product-subtotal {
+	color: #ff3333;
+}
+
+#main-menu ul.sf-menu {
+	background: transparent url('../images/nav-bar-orange.png') repeat-x left top;
+}
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: #857676;
+}
+.sf-menu ul ul a:hover{
+	color: #ff3333 !important;
+}
+.sf-menu>li>ul {
+	background: #554646;
+}
+.sf-menu>li.current, 
+.sf-menu>li.sfHover, 
+.sf-menu>li>a:hover {
+	background-color: #857676; /* layer fill content + color overlay */
+}
+.sf-menu li.sfHover .indicator,
+.sf-menu li.current .indicator,
+.sf-menu li:hover .indicator {
+	border-top-color: #857676;
+}
+
+.jcarousel-skin-default .jcarousel-next-horizontal:hover,
+.jcarousel-skin-default .jcarousel-next-horizontal:focus {
+    background-position: -32px -62px;
+}
+.jcarousel-skin-default .jcarousel-next-horizontal:active {
+     background-position: -32px -62px;
+}
+.jcarousel-skin-default .jcarousel-prev-horizontal:hover, 
+.jcarousel-skin-default .jcarousel-prev-horizontal:focus {
+    background-position: 0px -62px;
+}
+.jcarousel-skin-default .jcarousel-prev-horizontal:active {
+    background-position: 0px -62px;
+}
+
+.bt-basket {
+	background: url('../images/bt-add-basket-red.png') no-repeat 0 0 transparent;
+}
+
+.pagination .current {
+	background-color: #ff3333;
+}
+.pagination a.page-numbers:hover,
+.pagination .next:hover,
+.pagination .prev:hover {
+	background-color: #ff3333;
+}
+
+.speech-bubble {
+	background-color: #403131;
+}
+.speech-bubble:before {
+	border-left-color: #403131;
+}
+
+#comments .comment-meta a, #comments .comment-meta a:visited {
+	color: #403131; 
+}
+#comments .comment-meta a:hover {
+	color: #ff3333; 
+}
