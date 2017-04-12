@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<?php include_once(ROOT.'/Controllers/CartController.php'); ?>
+<?php include_once(ROOT.'/controllers/CartController.php'); ?>
 	<div id="wrapper" class="container_12">
 		<header id="header" class="grid_12">
 			<div class="header-top pull clearfix">
