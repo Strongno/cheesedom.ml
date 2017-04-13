@@ -102,7 +102,7 @@
 		
 <?php include_once(ROOT.'/Views/layout/footer.php');?>		
 	
-	<div class="content-border-bottom container_12">&nbsp;</div>
+	
 	<script type="text/javascript">
 		function similar_initCallback(carousel)
 		{

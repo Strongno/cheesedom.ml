@@ -52,5 +52,28 @@
 					</ul>
 				</div>
 			</div>
+    
 		</footer> <!-- #footer -->
+                
 	</div>
+        <div class="content-border-bottom container_12">&nbsp;</div>
+        <script>
+            $(document).ready(function() {
+                $(".add-to-cart").click(function(){
+                var id = $(this).attr("data-id");
+                var quantity = $(this).parent().parent().find('input[type=text]').val();
+                console.log(quantity);
+                $.ajax({
+                    type: "POST",
+                    url: "/cart/addAjax/"+id,
+                    data: "a=quantity",
+                    success: function(data){
+                        $('.label-text').html(data);
+                    }
+                  });
+                });
+                $('.basket').click(function() {
+                    location.href='/cart';
+                })
+            });
+        </script>

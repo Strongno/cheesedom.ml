@@ -30,7 +30,7 @@ class SiteController {
 					$errors[] = "Неправильная почта";
 				}
 				if (!User::checkName($name)) {
-					$errors[] = "Сшилком короткое имя";
+					$errors[] = "Слишком короткое имя";
 				}
 				if (!User::checkText($userText)) {
 					$errors[] = "Слишком короткое сообщение";
@@ -39,10 +39,10 @@ class SiteController {
 				if ($errors == false) {
 					$errors[] = 'Сообщение отправлено!';
 					$adminMail = 'rostme@mail.ru';
-					$subject = "Тема письма";
+					$subject = 'Тема письма';
 					$message = "{$userText} от {$userEmail}";
 					$result = mail($adminMail, $subject, $message);
-					$result = true;
+                                        $result = true;
 				}
 			}
 			
