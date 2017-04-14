@@ -3,6 +3,8 @@
   ini_set('display_errors',1);
   error_reporting(E_ALL);
   session_start();
+  //phpinfo();
+  //var_dump($_SESSION['products']);
   //unset($_SESSION['products']);
   //Определяем ROOT как местоположение файла Index.php
 	define('ROOT', dirname(__FILE__));

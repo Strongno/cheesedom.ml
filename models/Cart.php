@@ -1,8 +1,8 @@
 <?php
 
 class Cart {
-
-    public static function addProduct($id) {
+    public static function addProduct($id, $quant) {
+        $quant = intval($quant);
         $id = intval($id);
         $productsInCart = array();
 
@@ -11,30 +11,46 @@ class Cart {
         }
 
         if (array_key_exists($id, $productsInCart)) {
-            $productsInCart[$id]++;
+            $productsInCart[$id] = $productsInCart[$id] + $quant;
         } else {
-            $productsInCart[$id] = 1;
+            $productsInCart[$id] = $quant;
         }
 
         $_SESSION['products'] = $productsInCart;
-        
-        return self::countItems();
+        $_SESSION['quant'] = self::countQuantity();
+        $_SESSION['items'] = self::countItems();
+        $arr_i_q = array("quant"   => self::countQuantity(), 
+                         "items"   => self::countItems());
+        return $arr_i_q;
     }
     
     
 
 
-    public static function countItems() {
+    public static function countQuantity() {
         if (isset($_SESSION['products'])) {
             $count = 0;
             foreach ($_SESSION['products'] as $id => $quantity) {
                 $count = $count + $quantity;
+            }
+            return $count/1000;
+        } else {
+            return 0;
+        }
+    }
+     public static function countItems() {
+        if (isset($_SESSION['products'])) {
+            $count = 0;
+            foreach ($_SESSION['products'] as $key) {
+                $count++;
             }
             return $count;
         } else {
             return 0;
         }
     }
+    
+    
 
     public static function getProducts() {
 

@@ -2,9 +2,7 @@
 
 	class CabinetController {
 
-		/**
-		 * @return bool
-         */
+		
 		public function actionIndex() {
 
 			$userId = User::checkLogged();

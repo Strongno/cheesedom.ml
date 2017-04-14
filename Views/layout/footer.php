@@ -66,9 +66,11 @@
                 $.ajax({
                     type: "POST",
                     url: "/cart/addAjax/"+id,
-                    data: "a=quantity",
+                    data: 'find='+quantity,
                     success: function(data){
-                        $('.label-text').html(data);
+                        var obj = $.parseJSON(data);
+                        $('.label-text').html(obj.items+' вида, ');
+                        $('.label-mass').html(obj.quant+' Кг');
                     }
                   });
                 });

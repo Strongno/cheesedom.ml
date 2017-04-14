@@ -41,11 +41,13 @@
                         </div>
                         <div class="float-r">
                             <nav>
-                                <ul class="main-nav">
-
+                                <ul class="main-nav">    
                                     <li class="basket">
                                            <div class="textbox basket-text float-r">
-                                                <label>Корзина(<label class='label-text'><?php echo Cart::countItems(); ?></label>)</label>
+                                               <label>Корзина(
+                                                   <label class='label-text'><?php if (isset($_SESSION['items'])) echo $_SESSION['items'] . ' вида, '; else echo 0; ?></label>
+                                                       <label class="label-mass"><?php if (isset($_SESSION['quant'])) echo $_SESSION['quant'] . ' Кг '; else echo 0; ?></label>)
+                                               </label>
                                             </div>
                                             <div class="clearfix"></div>
                                     </li>

@@ -2,7 +2,7 @@
 
 class News {
 	const SHOW_BY_DEFAULT_NEWS = 2;
-
+        
 	// Получение всех новостей (не более 6 на странице)
 	public function getAllNews($page = 1) {
 		$count = self::SHOW_BY_DEFAULT_NEWS;
