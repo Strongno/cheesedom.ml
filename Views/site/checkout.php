@@ -44,8 +44,8 @@
                                     <td class="product-price"><span><?php echo $product['price']; ?> грн</span></td>
 
                                     <!-- Product subtotal -->
-                                    <td class="product-subtotal"><span><?php echo $_SESSION['products'][$product['id']]/1000 * $product['price']; ?> грн</span></td>
-                                    <td class="product-subtotal"><a href="/cart/delete/<?php echo $product['id']; ?>">Delete</a></td>
+                                    <td class="product-subtotal"><span><?php echo $_SESSION['products'][$product['id']] / 1000 * $product['price']; ?> грн</span></td>
+                                    <td class="product-subtotal product-delete" data-id="<?php echo $product['id']; ?>">Delete</td>
                                 </tr>
                             <?php endforeach; ?>
 
@@ -65,8 +65,11 @@
                             <tbody>
                                 <tr>
                                     <th><strong>Сумма к оплате</strong></th>
-                                    <td><strong><span><?php if (isset($_SESSION['products'])) echo CartController::actionCountSum();
-                        else echo '0'; ?>  грн</span></strong></td>
+                                    <td><strong><span><?php if (isset($_SESSION['products']))
+                            echo CartController::actionCountSum();
+                        else
+                            echo '0';
+                        ?>  грн</span></strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -80,7 +83,7 @@
         </article>
 
     <?php endif; ?>
-<?php if (!isset($productsInCart)) : ?>
+    <?php if (!isset($productsInCart)) : ?>
         <h1 align='center'>В корзине пока нет заказов </h1>
         <a href='/product' align='center' style='display:block'> Продолжить покупки </a>
 <?php endif; ?>
@@ -180,7 +183,21 @@
             auto: 2,
         });
     });
+    jQuery(document).ready(function ($) {
+        $(".product-delete").click(function () {
+            var id = $(this).attr("data-id");
+            //var quantity = $(this).parent().parent().find('input[type=text]').val();
+            //console.log(quantity);
+            $.ajax({
+                type: "POST",
+                url: "/cart/deleteAjax/"+id,
+                success: function () {
+                    
+                }
+            });
+            $(this).parent().remove();
+        });
+    });
 </script>
-
 </body>
 </html>

@@ -1,14 +1,14 @@
 <?php
 class CartController {
-    
     // Корзина пользователя
     public function actionIndex() {
-
         if (isset($_SESSION['products'])) {
             //Обновлнение количества продуктов в корзине(пользователем)
             if (isset($_POST['update'])) {
                 foreach ($_SESSION['products'] as $key => $value) {
                     $_SESSION['products'][$key] = $_POST["qty$key"];
+                    $_SESSION['quant'] = Cart::countQuantity();
+                    $_SESSION['items'] = Cart::countItems();
                 }
             }
             $productsInCart = array();
@@ -27,7 +27,7 @@ class CartController {
         $referer = $_SERVER['HTTP_REFERER'];
         header("Location: $referer");
     }
-    
+    //Добавление в корзину без перезагрузки страници
     public function actionAddAjax($id) {
         $quant = $_POST['find'];
         echo json_encode(Cart::addProduct($id, $quant));
@@ -54,9 +54,20 @@ class CartController {
 
         if (isset($_SESSION['products'])) {
             unset($_SESSION['products'][$id]);
+            $_SESSION['quant'] = Cart::countQuantity();
+            $_SESSION['items'] = Cart::countItems();
             if (count($_SESSION['products']) == 0) {
                 unset($_SESSION['products']);
             }
+        }
+    }
+    
+    public function actionDeleteAjax($id) {
+        if (isset($_SESSION['products'])) {
+            unset($_SESSION['products'][$id]);
+            $_SESSION['quant'] = Cart::countQuantity();
+            $_SESSION['items'] = Cart::countItems();
+            //print_r($_SESSION['quant']);
         }
     }
 

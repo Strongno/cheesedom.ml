@@ -43,17 +43,22 @@
                             <nav>
                                 <ul class="main-nav">    
                                     <li class="basket">
-                                           <div class="textbox basket-text float-r">
-                                               <label>Корзина(
-                                                   <label class='label-text'><?php if (isset($_SESSION['items'])) echo $_SESSION['items'] . ' вида, '; else echo 0; ?></label>
-                                                       <label class="label-mass"><?php if (isset($_SESSION['quant'])) echo $_SESSION['quant'] . ' Кг '; else echo 0; ?></label>)
-                                               </label>
-                                            </div>
-                                            <div class="clearfix"></div>
+                                        <div class="textbox basket-text float-r">
+                                            <label>Корзина(
+                                                <label class='label-text'><?php if (isset($_SESSION['items']))
+            echo $_SESSION['items'] . ' вида, ';
+        else
+            echo 0;
+        ?></label>
+                                                <label class="label-mass"><?php if (isset($_SESSION['quant'])) echo $_SESSION['quant'] . ' Кг '; ?></label>)
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
                                     </li>
                                                 <?php if (isset($_SESSION['user'])) : ?>
                                         <li>
-                                            <a href="/user/cabinet">Кабинет <span><?php $user = User::getUserById($_SESSION['user']);
+                                            <a href="/user/cabinet">Кабинет <span><?php
+                                                $user = User::getUserById($_SESSION['user']);
                                                 echo $user['name'];
                                                     ?>(а)</span></a>
                                         </li>

@@ -9,6 +9,7 @@
 			'cart/add/([0-9]+)'		=> 'cart/add/$1',
                         'cart/addAjax/([0-9]+)'         => 'cart/addAjax/$1',
 			'cart/delete/([0-9]+)'		=> 'cart/delete/$1',
+                        'cart/deleteAjax/([0-9]+)'      => 'cart/deleteAjax/$1',
 			'booking'			=> 'checkout/booking',
 			'fastorder'			=> 'checkout/fastOrder',
 			'checkout'			=> 'checkout/index',
@@ -24,5 +25,6 @@
 			'news'				=> 'news/index',
 			'contacts'			=> 'site/contacts',
 			'deliver'			=>  'site/404',
+                        'admin'                         =>  'admin/index',
 			''				=>  'site/index',
 		);

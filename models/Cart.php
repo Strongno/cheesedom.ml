@@ -1,5 +1,4 @@
 <?php
-
 class Cart {
     public static function addProduct($id, $quant) {
         $quant = intval($quant);

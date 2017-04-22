@@ -30,5 +30,7 @@ class Checkout {
 
 	public static function clear() {
 		unset($_SESSION['products']);
+                unset($_SESSION['items']);
+                unset($_SESSION['quant']);
 	}
 }
