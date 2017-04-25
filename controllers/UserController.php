@@ -1,128 +1,126 @@
 <?php
 
-	class UserController {
+class UserController {
 
-		//Регистрация нового пользователя
-		public function actionRegister() {
+    //Регистрация нового пользователя
+    public function actionRegister() {
 
-			$name = '';
-			$lastName = '';
-			$email = '';
-			$telephone = '';
-			$password = '';
-			$passwordConfirm = '';
-			$result = false;
+        $name = '';
+        $lastName = '';
+        $email = '';
+        $telephone = '';
+        $password = '';
+        $passwordConfirm = '';
+        $result = false;
 
-			if (isset($_POST['submit'])) {
-				$name = $_POST['name'];
-				$email = $_POST['email'];
-				$lastName = $_POST['lastName'];
-				$telephone = $_POST['telephone'];
-				$password = $_POST['password'];
-				$passwordConfirm = $_POST['passwordConfirm'];
-			
-				$errors = false;	
+        if (isset($_POST['submit'])) {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $lastName = $_POST['lastName'];
+            $telephone = $_POST['telephone'];
+            $password = $_POST['password'];
+            $passwordConfirm = $_POST['passwordConfirm'];
 
-				if (User::checkName($name)) {
-					echo "";
-				} else {
-					$errors[] = "Слишком короткое имя";
-				}
-				
-				if (User::checkName($lastName)) {
-					echo "";
-				} else {
-					$errors[] = "Слишком короткая фамилия";
-				}
-				
-				if (User::checkEmail($email)) {
-					echo "";
-				} else {
-					$errors[] = "Неверный формат почты";
-				}
-				if (User::checkTelephone($telephone)) {
-					echo "";
-				} else {
-					$errors[] = "Неверный формат телефона";
-				}
+            $errors = false;
 
-				if (User::checkPassword($password)) {
-					echo "";
-				} else {
-					$errors[] = "Слишком легкий пароль";
-				}
+            if (User::checkName($name)) {
+                echo "";
+            } else {
+                $errors[] = "Слишком короткое имя";
+            }
 
-				if (User::checkPasswordConfirm($passwordConfirm)) {
-					echo "";
-				} else {
-					$errors[] = "Введите подтверждение пароля";
-				}
+            if (User::checkName($lastName)) {
+                echo "";
+            } else {
+                $errors[] = "Слишком короткая фамилия";
+            }
 
-				if (User::checkPasswordSimilar($password, $passwordConfirm)) {
-					echo "";
-				} else {
-					$errors[] = "Пароли отличаются";
-				}
+            if (User::checkEmail($email)) {
+                echo "";
+            } else {
+                $errors[] = "Неверный формат почты";
+            }
+            if (User::checkTelephone($telephone)) {
+                echo "";
+            } else {
+                $errors[] = "Неверный формат телефона";
+            }
 
-				if (User::checkEmailExists($email)) {
-					$errors[] = "Такой Email уже существует";
-				}
+            if (User::checkPassword($password)) {
+                echo "";
+            } else {
+                $errors[] = "Слишком легкий пароль";
+            }
 
-				if ($errors == false) {
-					$errors[] = 'Вы успешно зарегистрированы';
-					$result = User::register($name,$lastName, $email, $telephone, $password);
-				}
+            if (User::checkPasswordConfirm($passwordConfirm)) {
+                echo "";
+            } else {
+                $errors[] = "Введите подтверждение пароля";
+            }
 
-			}
+            if (User::checkPasswordSimilar($password, $passwordConfirm)) {
+                echo "";
+            } else {
+                $errors[] = "Пароли отличаются";
+            }
 
-			require_once(ROOT.'/Views/site/register.php');
-			return true;
-		}
+            if (User::checkEmailExists($email)) {
+                $errors[] = "Такой Email уже существует";
+            }
 
-		// Авторизация пользователя
-		public function actionSignin() {
+            if ($errors == false) {
+                $errors[] = 'Вы успешно зарегистрированы';
+                $result = User::register($name, $lastName, $email, $telephone, $password);
+            }
+        }
 
-			$email = '';
-			$password = '';
-			
+        require_once(ROOT . '/Views/site/register.php');
+        return true;
+    }
 
-			if (isset($_POST['submit'])) {
-				$email = $_POST['email'];
-				$password = $_POST['password'];
-				$errors = false;
+    // Авторизация пользователя
+    public function actionSignin() {
+
+        $email = '';
+        $password = '';
 
 
-				//Валидаия полей
-				if (!User::checkEmail($email)) {
-					$errors[] = "Неправильная почта";
-				}
-				if (!User::checkPassword($password)) {
-					$errors[] = "Неправильный пароль";
-				}
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $errors = false;
 
 
-				//Проверяем существует ли такой пользователь
-				$userId = User::checkUserData($email, $password);
+            //Валидаия полей
+            if (!User::checkEmail($email)) {
+                $errors[] = "Неправильная почта";
+            }
+            if (!User::checkPassword($password)) {
+                $errors[] = "Неправильный пароль";
+            }
 
-				if ($userId == false) {
-					$errors[] = 'Такого пользователя не существует';
-				}
-				else {
-					//Если данные правильные запоминаем пользователя и создаем сессию
-					User::auth($userId);
-					//Перенаправляем в кабинет
-					header("Location: ../user/cabinet");
-				}
-			}
 
-			require_once(ROOT.'/Views/site/signin.php');
-			return true;
-		}
+            //Проверяем существует ли такой пользователь
+            $userId = User::checkUserData($email, $password);
 
-		// Выход пользователя
-		public function actionLogout() {
-			unset($_SESSION['user']);
-			header("Location: /");
-		}
+            if ($userId == false) {
+                $errors[] = 'Такого пользователя не существует';
+            } else {
+                //Если данные правильные запоминаем пользователя и создаем сессию
+                User::auth($userId);
+                //Перенаправляем в кабинет
+                header("Location: ../user/cabinet");
+            }
+        }
+
+        require_once(ROOT . '/Views/site/signin.php');
+        return true;
+    }
+
+    // Выход пользователя
+    public function actionLogout() {
+        unset($_SESSION['user']);
+        header("Location: /");
+    }
 
 }
