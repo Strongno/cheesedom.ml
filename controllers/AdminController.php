@@ -1,5 +1,4 @@
 <?php
-
 class AdminController extends AdminBase{
     
     public function actionIndex() {
@@ -7,5 +6,9 @@ class AdminController extends AdminBase{
         
         require_once(ROOT . '/Views/site/adminpanel.php');
         return true;
+    }
+    
+    public function actionProduct() {
+        
     }
 }

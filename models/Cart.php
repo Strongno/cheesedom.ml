@@ -1,5 +1,7 @@
 <?php
+
 class Cart {
+
     public static function addProduct($id, $quant) {
         $quant = intval($quant);
         $id = intval($id);
@@ -18,13 +20,10 @@ class Cart {
         $_SESSION['products'] = $productsInCart;
         $_SESSION['quant'] = self::countQuantity();
         $_SESSION['items'] = self::countItems();
-        $arr_i_q = array("quant"   => self::countQuantity(), 
-                         "items"   => self::countItems());
+        $arr_i_q = array("quant" => self::countQuantity(),
+            "items" => self::countItems());
         return $arr_i_q;
     }
-    
-    
-
 
     public static function countQuantity() {
         if (isset($_SESSION['products'])) {
@@ -32,12 +31,13 @@ class Cart {
             foreach ($_SESSION['products'] as $id => $quantity) {
                 $count = $count + $quantity;
             }
-            return $count/1000;
+            return $count / 1000;
         } else {
             return 0;
         }
     }
-     public static function countItems() {
+
+    public static function countItems() {
         if (isset($_SESSION['products'])) {
             $count = 0;
             foreach ($_SESSION['products'] as $key) {
@@ -48,8 +48,6 @@ class Cart {
             return 0;
         }
     }
-    
-    
 
     public static function getProducts() {
 

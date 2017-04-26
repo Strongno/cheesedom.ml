@@ -10,6 +10,7 @@
 	define('ROOT', dirname(__FILE__));
 	//print_r(ROOT);
  	include_once ('components/Autoload.php');
+        Product::deleteProductById(4);
  	$router = new Router();
  	$router->run();
 ?>

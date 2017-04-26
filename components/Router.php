@@ -19,7 +19,7 @@ class Router {
 
     public function run() {
         $uri = $this->getURI();
-
+        
         foreach ($this->routes as $uriPattern => $path) {
 
             //Если routes->uri(news) compromises $uri
@@ -28,7 +28,6 @@ class Router {
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 $internalRoute = trim($internalRoute, '/');
                 $segmets = explode('/', $internalRoute);
-
                 $controllerName = array_shift($segmets) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 

@@ -185,9 +185,9 @@
 
                     <h5 class="leftpanel-title">Navigation</h5>
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="index.html"><i class="fa fa-home"></i> <span>Страница заказов</span></a></li>
-                        <li><a href="index.html"><i class="fa fa-home"></i> <span>Категории продуктов</span></a></li>
-                        <li><a href="index.html"><i class="fa fa-home"></i> <span>Продукты</span></a></li>
+                        <li><a href="/admin/order"><i class="fa fa-home"></i> <span>Страница заказов</span></a></li>
+                        <li><a href="/admin/category"><i class="fa fa-home"></i> <span>Категории продуктов</span></a></li>
+                        <li><a href="/admin/product"><i class="fa fa-home"></i> <span>Продукты</span></a></li>
 <!--                        <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li>
                         <li class="parent"><a href=""><i class="fa fa-suitcase"></i> <span>UI Elements</span></a>
                             <ul class="children">
